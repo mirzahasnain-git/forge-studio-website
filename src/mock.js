@@ -93,30 +93,16 @@ export const portfolio = [
   {
     id: 3,
     title: "Tic-Tac-Toe",
-    category: "Web Engineering",
+    category: "Web Development",
     cover: "https://images.unsplash.com/photo-1611996575749-79a3a250f948?w=1000&q=80",
     desc: "A browser game built with HTML, CSS, and JavaScript with interactive game logic.",
   },
   {
     id: 4,
-    title: "Video Editing Sample",
+    title: "Video Editing Samples",
     category: "Shorts & Reels",
     cover: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=1000&q=80",
-    desc: "Short-form editing work can be added here as you build your video portfolio.",
-  },
-  {
-    id: 5,
-    title: "Website Concept",
-    category: "Web Engineering",
-    cover: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=1000&q=80",
-    desc: "A space for the next client website or concept project.",
-  },
-  {
-    id: 6,
-    title: "Video Ad Sample",
-    category: "Video Ads",
-    cover: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=1000&q=80",
-    desc: "Add a real ad creative here once you have a client or personal campaign sample.",
+    desc: "Short-form editing work will be added here as the Forge video portfolio grows.",
   },
 ];
 
