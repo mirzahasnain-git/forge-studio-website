@@ -1,60 +1,31 @@
 import React from "react";
 import Reveal from "./Reveal";
-import { testimonials, brandLogos } from "../mock";
-import { Quote } from "lucide-react";
+import { Code2, MessageCircle, Sparkles } from "lucide-react";
 
-const SocialProof = () => {
-  return (
-    <section className="relative bg-black py-24 md:py-15">
-      <div className="max-w-7xl mx-auto px-6 md:px-10">
-        <Reveal>
-          <div className="text-center max-w-2xl mx-auto mb-14">
-            <span className="tag-pill px-3 py-1 rounded-full text-xs font-medium">
-              Trusted by
-            </span>
-            <h2 className="font-display mt-5 text-4xl md:text-5xl font-bold tracking-tight">
-              Founders who stopped{" "}
-              <span className="hero-gradient-text">stitching freelancers</span>.
-            </h2>
-          </div>
-        </Reveal>
+const expectations = [
+  { icon: Code2, title: "Built around your goal", desc: "We start with the business problem instead of forcing a one-size-fits-all package." },
+  { icon: MessageCircle, title: "Direct communication", desc: "Clear updates, quick feedback loops, and no unnecessary account-management layers." },
+  { icon: Sparkles, title: "Design + technology", desc: "Your website and content can share the same visual direction and brand voice." },
+];
 
-        <div className="grid md:grid-cols-3 gap-5 mb-20">
-          {testimonials.map((t) => (
-            <Reveal key={t.name}>
-              <div className="card-dark rounded-2xl p-7 h-full">
-                <Quote size={22} className="text-lime" />
-                <p className="mt-5 text-neutral-200 leading-relaxed text-[15px]">
-                  “{t.quote}”
-                </p>
-                <div className="mt-6 border-t border-white/5 pt-4">
-                  <div className="font-semibold text-sm text-neutral-100">
-                    {t.name}
-                  </div>
-                  <div className="text-xs text-neutral-500">{t.role}</div>
-                </div>
-              </div>
-            </Reveal>
-          ))}
+const SocialProof = () => (
+  <section className="relative bg-black py-24 md:py-28">
+    <div className="max-w-7xl mx-auto px-6 md:px-10">
+      <Reveal>
+        <div className="text-center max-w-2xl mx-auto mb-14">
+          <span className="tag-pill px-3 py-1 rounded-full text-xs font-medium">Why Forge</span>
+          <h2 className="font-display mt-5 text-4xl md:text-5xl font-bold tracking-tight">A lean studio, <span className="hero-gradient-text">focused on the work.</span></h2>
+          <p className="mt-4 text-neutral-400 text-base md:text-lg">No inflated team structure. No made-up case studies. Just clear scope and quality execution.</p>
         </div>
-
-        <Reveal>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-white/5 rounded-2xl overflow-hidden border border-white/5">
-            {brandLogos.map((b) => (
-              <div
-                key={b}
-                className="bg-black/60 py-8 flex items-center justify-center hover:bg-black/40 transition-colors"
-              >
-                <span className="font-display text-xl text-neutral-500 hover:text-lime transition-colors">
-                  {b}
-                </span>
-              </div>
-            ))}
-          </div>
-        </Reveal>
+      </Reveal>
+      <div className="grid md:grid-cols-3 gap-5">
+        {expectations.map((item, i) => {
+          const Icon = item.icon;
+          return <Reveal key={item.title} delay={i * 0.1}><div className="card-dark rounded-2xl p-7 h-full"><div className="w-11 h-11 rounded-xl bg-lime-300/10 border border-lime-300/30 flex items-center justify-center"><Icon size={18} className="text-lime" /></div><h3 className="font-display text-xl font-semibold mt-5">{item.title}</h3><p className="mt-2 text-sm text-neutral-400 leading-relaxed">{item.desc}</p></div></Reveal>;
+        })}
       </div>
-    </section>
-  );
-};
+    </div>
+  </section>
+);
 
 export default SocialProof;
