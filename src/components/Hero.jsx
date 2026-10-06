@@ -7,47 +7,32 @@ import { stats } from "../mock";
 const Hero = () => {
   return (
     <section className="relative overflow-hidden bg-grid noise">
-      {/* Faux-Navbar Pill (Scrolls away with page) */}
       <motion.div
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
         className="absolute top-6 left-1/2 -translate-x-1/2 z-40 hidden lg:flex justify-center"
       >
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-lime-300/30 bg-black/40 text-xs font-medium text-lime transition-colors backdrop-blur-sm">
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-lime-300/30 bg-black/40 text-xs font-medium text-lime backdrop-blur-sm">
           <Sparkles size={14} />
-          Hybrid agency — Engineering & Video, one team
+          Web development + video editing
         </div>
       </motion.div>
 
-      {/* Ambient orbs */}
-      <div
-        className="pointer-events-none absolute -top-32 -left-32 w-[520px] h-[520px] rounded-full blur-3xl opacity-30"
-        style={{
-          background:
-            "radial-gradient(circle, rgba(182,255,110,0.35) 0%, transparent 70%)",
-        }}
-      />
-      <div
-        className="pointer-events-none absolute -bottom-32 -right-32 w-[520px] h-[520px] rounded-full blur-3xl opacity-20"
-        style={{
-          background:
-            "radial-gradient(circle, rgba(77,199,230,0.35) 0%, transparent 70%)",
-        }}
-      />
+      <div className="pointer-events-none absolute -top-32 -left-32 w-[520px] h-[520px] rounded-full blur-3xl opacity-30" style={{ background: "radial-gradient(circle, rgba(182,255,110,0.35) 0%, transparent 70%)" }} />
+      <div className="pointer-events-none absolute -bottom-32 -right-32 w-[520px] h-[520px] rounded-full blur-3xl opacity-20" style={{ background: "radial-gradient(circle, rgba(77,199,230,0.35) 0%, transparent 70%)" }} />
 
-      <div className="relative max-w-7xl mx-auto px-6 md:px-10 pt-8 pb-24 md:pt-12 md:pb-13">
+      <div className="relative max-w-7xl mx-auto px-6 md:px-10 pt-8 pb-24 md:pt-12 md:pb-28">
         <div className="flex flex-col items-center text-center">
           <motion.h1
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
-            className="font-display mt-8 text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1] max-w-5xl"
+            className="font-display mt-8 text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.05] max-w-5xl"
           >
-            Build Your Presence. <br className="hidden md:block" />
-            Tell Your Story. <br className="hidden md:block" />
+            Where Code Meets{" "}
             <span className="text-lime drop-shadow-[0_0_15px_rgba(182,255,110,0.5)]">
-              Grow Your Brand.
+              Creativity.
             </span>
           </motion.h1>
 
@@ -57,8 +42,8 @@ const Hero = () => {
             transition={{ duration: 0.7, delay: 0.25 }}
             className="mt-6 max-w-2xl text-neutral-400 text-lg md:text-xl leading-relaxed"
           >
-            From high-performing websites to scroll-stopping videos, we create
-            digital experiences that make brands stand out.
+            Forge Studio builds modern websites and creates engaging video
+            content for brands that want to show up, stand out, and grow online.
           </motion.p>
 
           <motion.div
@@ -67,17 +52,11 @@ const Hero = () => {
             transition={{ duration: 0.7, delay: 0.4 }}
             className="mt-10 flex flex-col sm:flex-row items-center gap-4"
           >
-            <Link
-              to="/contact"
-              className="btn-primary-glow rounded-full px-7 py-3.5 text-sm font-semibold inline-flex items-center gap-2"
-            >
-              Start a Project <ArrowRight size={16} />
+            <Link to="/contact" className="btn-primary-glow rounded-full px-7 py-3.5 text-sm font-semibold inline-flex items-center gap-2">
+              Start Your Project <ArrowRight size={16} />
             </Link>
-            <Link
-              to="/services"
-              className="btn-outline-soft rounded-full px-7 py-3.5 text-sm font-semibold"
-            >
-              Explore Services
+            <Link to="/portfolio" className="btn-outline-soft rounded-full px-7 py-3.5 text-sm font-semibold">
+              View Our Work
             </Link>
           </motion.div>
 
@@ -89,12 +68,8 @@ const Hero = () => {
           >
             {stats.map((s) => (
               <div key={s.label} className="text-center">
-                <div className="font-display text-3xl md:text-5xl font-semibold text-lime">
-                  {s.value}
-                </div>
-                <div className="text-xs md:text-sm text-neutral-400 mt-1">
-                  {s.label}
-                </div>
+                <div className="font-display text-3xl md:text-5xl font-semibold text-lime">{s.value}</div>
+                <div className="text-xs md:text-sm text-neutral-400 mt-1">{s.label}</div>
               </div>
             ))}
           </motion.div>
