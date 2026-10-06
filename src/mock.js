@@ -79,14 +79,15 @@ export const portfolio = [
   {
     id: 1,
     title: "TaskFlow",
-    category: "Product Interfaces",
+    category: "Web Applications",
     cover: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1000&q=80",
     desc: "A React-based task management interface focused on organizing projects, tasks, and workflow.",
+    github: "https://github.com/mirzahasnain-git/taskflow",
   },
   {
     id: 2,
     title: "Career Catalyst",
-    category: "Web Engineering",
+    category: "Web Development",
     cover: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1000&q=80",
     desc: "A career guidance and blogging website with a responsive Bootstrap layout, content cards, and interactive sections.",
   },
