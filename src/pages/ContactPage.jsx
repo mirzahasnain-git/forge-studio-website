@@ -10,7 +10,7 @@ const ContactPage = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    const recipient = import.meta.env.VITE_CONTACT_EMAIL;
+    const recipient = import.meta.env.VITE_CONTACT_EMAIL || "mirzahasnainalam@gmail.com";
     if (!recipient) {
       toast({ title: "Contact email not configured", description: "Add VITE_CONTACT_EMAIL to your Vercel/hosting environment variables before using the form." });
       return;
@@ -30,8 +30,8 @@ const ContactPage = () => {
             <h1 className="font-display mt-6 text-5xl md:text-6xl font-bold tracking-tight leading-[1.05]">Let’s <span className="hero-gradient-text">forge</span> something.</h1>
             <p className="mt-5 text-neutral-400 text-lg">Tell us what you are building, what you need help with, and what a successful project looks like.</p>
             <div className="mt-10 space-y-5">
-              <div className="flex items-start gap-4"><div className="w-11 h-11 rounded-xl bg-lime-300/10 border border-lime-300/25 flex items-center justify-center shrink-0"><Mail size={16} className="text-lime" /></div><div><div className="text-xs text-neutral-500">Email</div><div className="text-neutral-200 font-medium">Set VITE_CONTACT_EMAIL</div></div></div>
-              <p className="text-sm text-neutral-500 max-w-sm">For now, submitting the form opens your email client with the project brief pre-filled. Once you connect a form backend, leads can be delivered automatically without relying on the visitor’s email app.</p>
+              <div className="flex items-start gap-4"><div className="w-11 h-11 rounded-xl bg-lime-300/10 border border-lime-300/25 flex items-center justify-center shrink-0"><Mail size={16} className="text-lime" /></div><div><div className="text-xs text-neutral-500">Email</div><div className="text-neutral-200 font-medium">mirzahasnainalam@gmail.com</div></div></div>
+              <p className="text-sm text-neutral-500 max-w-sm">Submitting the form opens your email client with the project brief pre-filled and sends it to the Forge Studio inbox.</p>
             </div>
           </Reveal>
           <Reveal delay={0.15}>
