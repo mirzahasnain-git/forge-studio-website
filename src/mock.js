@@ -82,6 +82,7 @@ export const portfolio = [
     category: "Web Applications",
     cover: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1000&q=80",
     desc: "A React-based task management interface focused on organizing projects, tasks, and workflow.",
+    demo: "https://mirzahasnain-git.github.io/TaskFlow/",
     github: "https://github.com/mirzahasnain-git/taskflow",
   },
   {
@@ -90,6 +91,7 @@ export const portfolio = [
     category: "Web Development",
     cover: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1000&q=80",
     desc: "A career guidance and blogging website with a responsive Bootstrap layout, content cards, and interactive sections.",
+    demo: "https://mirzahasnain-git.github.io/Career-Catalyst/",
   },
   {
     id: 3,
@@ -97,6 +99,7 @@ export const portfolio = [
     category: "Web Development",
     cover: "https://images.unsplash.com/photo-1611996575749-79a3a250f948?w=1000&q=80",
     desc: "A browser game built with HTML, CSS, and JavaScript with interactive game logic.",
+    demo: "https://mirzahasnain-git.github.io/Tic-Tac-Toe/",
   },
   {
     id: 4,
