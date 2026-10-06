@@ -31,7 +31,7 @@ const Hero = () => {
             className="font-display mt-8 text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.05] max-w-5xl"
           >
             Where Code Meets{" "}
-            <span className="text-lime drop-shadow-[0_0_15px_rgba(182,255,110,0.5)]">
+            <span className="hero-gradient-text drop-shadow-[0_0_15px_rgba(100,224,180,0.25)]">
               Creativity.
             </span>
           </motion.h1>
