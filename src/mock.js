@@ -128,7 +128,20 @@ export const portfolio = [
   },
 ];
 
-export const showreels = [];
+export const showreels = [
+  {
+    id: 1,
+    title: "YouTube Long-Form Edit",
+    type: "YouTube Editing",
+    embed: "",
+  },
+  {
+    id: 2,
+    title: "Podcast Edit",
+    type: "Podcast Editing",
+    embed: "",
+  },
+];
 
 export const process = [
   { step: "01", title: "Discover", desc: "We understand your business, audience, goals, and the problem you want to solve." },
