@@ -22,7 +22,7 @@ const Hero = () => {
       <div className="pointer-events-none absolute -top-32 -left-32 w-[520px] h-[520px] rounded-full blur-3xl opacity-30" style={{ background: "radial-gradient(circle, rgba(182,255,110,0.35) 0%, transparent 70%)" }} />
       <div className="pointer-events-none absolute -bottom-32 -right-32 w-[520px] h-[520px] rounded-full blur-3xl opacity-20" style={{ background: "radial-gradient(circle, rgba(77,199,230,0.35) 0%, transparent 70%)" }} />
 
-      <div className="relative max-w-7xl mx-auto px-6 md:px-10 pt-8 pb-24 md:pt-12 md:pb-28">
+      <div className="relative max-w-7xl mx-auto px-6 md:px-10 pt-20 pb-12 md:pt-20 md:pb-14">
         <div className="flex flex-col items-center text-center">
           <motion.h1
             initial={{ opacity: 0, y: 24 }}
