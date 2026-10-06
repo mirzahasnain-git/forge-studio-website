@@ -4,7 +4,7 @@ import { portfolio } from "../mock";
 import { ArrowUpRight, Github, ExternalLink } from "lucide-react";
 import CTASection from "../components/CTASection";
 
-const categories = ["All", "Web Development", "Web Applications", "Shorts & Reels", "Video Ads"];
+const categories = ["All", "Web Development", "Web Applications", "YouTube Editing", "Podcast Editing", "Shorts & Reels", "Video Ads"];
 
 const PortfolioPage = () => {
   const [filter, setFilter] = useState("All");
@@ -48,7 +48,7 @@ const PortfolioPage = () => {
                     </div>
                     <p className="mt-2 text-sm text-neutral-400">{p.desc}</p>
                     <div className="mt-5 flex flex-wrap gap-2">
-                      {p.demo && <a href={p.demo} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 rounded-full border border-lime-300/30 px-3 py-1.5 text-xs font-medium text-lime hover:bg-lime-300/10"><ExternalLink size={13} /> Live Demo</a>}
+                      {p.demo && <a href={p.demo} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 rounded-full border border-lime-300/30 px-3 py-1.5 text-xs font-medium text-lime hover:bg-lime-300/10"><ExternalLink size={13} /> {p.linkLabel || "Live Demo"}</a>}
                       {p.github && <a href={p.github} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 rounded-full border border-white/10 px-3 py-1.5 text-xs font-medium text-neutral-300 hover:border-white/30"><Github size={13} /> GitHub</a>}
                     </div>
                   </div>
