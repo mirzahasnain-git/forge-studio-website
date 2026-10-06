@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Flame, Mail } from "lucide-react";
 
 const Footer = () => {
-  const contactEmail = import.meta.env.VITE_CONTACT_EMAIL;
+  const contactEmail = import.meta.env.VITE_CONTACT_EMAIL || "mirzahasnainalam@gmail.com";
 
   return (
     <footer className="relative border-t border-white/5 bg-black">
@@ -19,11 +19,9 @@ const Footer = () => {
             <p className="mt-4 text-neutral-400 max-w-md text-sm leading-relaxed">
               Web development and video editing for businesses and creators who want a stronger digital presence.
             </p>
-            {contactEmail && (
-              <a href={`mailto:${contactEmail}`} className="inline-flex items-center gap-2 mt-5 text-sm text-neutral-300 hover:text-lime transition-colors">
-                <Mail size={14} className="text-lime" /> {contactEmail}
-              </a>
-            )}
+            <a href={`mailto:${contactEmail}`} className="inline-flex items-center gap-2 mt-5 text-sm text-neutral-300 hover:text-lime transition-colors">
+              <Mail size={14} className="text-lime" /> {contactEmail}
+            </a>
           </div>
 
           <div>
