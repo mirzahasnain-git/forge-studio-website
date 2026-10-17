@@ -9,9 +9,9 @@ export const navLinks = [
 ];
 
 export const stats = [
-  { value: "2", label: "Core services" },
-  { value: "5+", label: "Projects built" },
-  { value: "1", label: "Direct team" },
+  { value: "02", label: "Service pillars" },
+  { value: "07", label: "Portfolio samples" },
+  { value: "01", label: "Studio direction" },
 ];
 
 export const itServices = [
