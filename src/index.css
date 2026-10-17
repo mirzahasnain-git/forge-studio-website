@@ -83,7 +83,7 @@ code { font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', mon
 .hero-float-card { position: absolute; z-index: 3; border: 1px solid rgba(255,255,255,.12); background: linear-gradient(145deg, rgba(28,26,24,.92), rgba(9,9,9,.88)); box-shadow: 0 25px 65px rgba(0,0,0,.48), 0 0 35px rgba(255,111,34,.06); backdrop-filter: blur(18px); border-radius: 17px; overflow: hidden; transform-style: preserve-3d; }
 .hero-code-card { width: 58%; max-width: 290px; left: 0; top: 8%; transform: translateZ(70px) rotateY(9deg); }
 .hero-window-dot { display: block; width: 6px; height: 6px; border-radius: 50%; background: #ff8a24; opacity: .75; }
-.hero-video-card { width: 57%; max-width: 280px; right: 0; bottom: 6%; transform: translateZ(90px) rotateY(-8deg); }
+.hero-video-card { width: 57%; max-width: 280px; right: 0; bottom: 18%; transform: translateZ(90px) rotateY(-8deg); }
 .hero-video-art { position: relative; height: 135px; overflow: hidden; background: linear-gradient(145deg, #4b2718, #15100e 55%, #080808); }
 .hero-video-art::before { content: ''; position: absolute; inset: 0; background: repeating-linear-gradient(130deg, transparent 0 19px, rgba(255,255,255,.035) 20px 21px); }
 .hero-video-sun { position: absolute; width: 95px; height: 95px; border-radius: 50%; right: 16%; top: 2%; background: radial-gradient(circle at 35% 30%, #ffd2a1, #ff802f 48%, rgba(255,103,31,.04) 72%); filter: blur(.2px); box-shadow: 0 0 45px rgba(255,119,45,.2); }
@@ -104,10 +104,10 @@ code { font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', mon
 @keyframes vgraph-core-float { 0%,100% { transform: translate(-50%,-50%) translateZ(45px) rotate(-5deg); } 50% { transform: translate(-50%,-53%) translateZ(45px) rotate(5deg); } }
 @keyframes vgraph-sheen { 0%,100% { left: -120%; } 50% { left: 100%; } }
 @media (max-width: 640px) {
-  .hero-scene { min-height: 350px; }
-  .hero-3d-stage { height: 340px; }
+  .hero-scene { min-height: 310px; }
+  .hero-3d-stage { height: 300px; }
   .hero-code-card { width: 61%; top: 6%; }
-  .hero-video-card { width: 61%; bottom: 2%; }
+  .hero-video-card { width: 61%; bottom: 12%; }
   .hero-video-art { height: 100px; }
   .hero-chip-one { right: -2%; top: 19%; }
   .hero-chip-two { left: -2%; bottom: 15%; }
