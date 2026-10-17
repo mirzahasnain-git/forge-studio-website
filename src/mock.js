@@ -60,6 +60,12 @@ export const portfolio = [
     videoId: "3yzlfvpaf0Y", aspect: "video", linkLabel: "Watch podcast",
   },
   {
+    id: 8, title: "Podcast Conversation — New Episode", category: "Podcast Editing",
+    cover: "https://i.ytimg.com/vi/Hdwoxwutp3Y/hqdefault.jpg",
+    desc: "A podcast conversation sample showcasing pacing, clear storytelling, and an engaging viewing flow.",
+    videoId: "Hdwoxwutp3Y", aspect: "video", linkLabel: "Watch podcast",
+  },
+  {
     id: 6, title: "Restaurant Promotional Film", category: "Business Promotions",
     cover: "https://i.ytimg.com/vi/28tfSOzQUYQ/hqdefault.jpg",
     desc: "A cinematic restaurant promotion showcasing atmosphere, food, and brand identity.",
@@ -72,7 +78,6 @@ export const portfolio = [
     videoId: "z3_VXNtlL30", aspect: "portrait", linkLabel: "Watch reel",
   },
 ];
-
 export const showreels = [
   { id: 1, title: "Podcast Teaser — Stock Market", type: "Podcast Editing", embed: "https://www.youtube-nocookie.com/embed/bpmjS7tBJH8" },
   { id: 2, title: "Restaurant Promotional Film", type: "Business Promotions", embed: "https://www.youtube-nocookie.com/embed/28tfSOzQUYQ" },
