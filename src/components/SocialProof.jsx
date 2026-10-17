@@ -1,31 +1,18 @@
 import React from "react";
+import { motion } from "framer-motion";
 import Reveal from "./Reveal";
-import { Code2, MessageCircle, Sparkles } from "lucide-react";
+import { Code2, MessageCircle, Sparkles, ArrowUpRight, ShieldCheck } from "lucide-react";
 
-const expectations = [
-  { icon: Code2, title: "Built around your goal", desc: "We start with the business problem instead of forcing a one-size-fits-all package." },
-  { icon: MessageCircle, title: "Direct communication", desc: "Clear updates, quick feedback loops, and no unnecessary account-management layers." },
-  { icon: Sparkles, title: "Design + technology", desc: "Your website and content can share the same visual direction and brand voice." },
+const expectations=[
+ {icon:Code2,no:"01",title:"Built around your goal",desc:"We start with the business problem instead of forcing a one-size-fits-all package."},
+ {icon:MessageCircle,no:"02",title:"Direct communication",desc:"Clear updates, useful feedback loops, and a process you can actually follow."},
+ {icon:Sparkles,no:"03",title:"Design meets technology",desc:"Your website and content can share one visual direction and a consistent brand voice."}
 ];
-
-const SocialProof = () => (
-  <section className="relative bg-black py-24 md:py-28">
-    <div className="max-w-7xl mx-auto px-6 md:px-10">
-      <Reveal>
-        <div className="text-center max-w-2xl mx-auto mb-14">
-          <span className="tag-pill px-3 py-1 rounded-full text-xs font-medium">Why V-Graph</span>
-          <h2 className="font-display mt-5 text-4xl md:text-5xl font-bold tracking-tight">A lean studio, <span className="hero-gradient-text">focused on the work.</span></h2>
-          <p className="mt-4 text-neutral-400 text-base md:text-lg">No inflated team structure. No made-up case studies. Just clear scope and quality execution.</p>
-        </div>
-      </Reveal>
-      <div className="grid md:grid-cols-3 gap-5">
-        {expectations.map((item, i) => {
-          const Icon = item.icon;
-          return <Reveal key={item.title} delay={i * 0.1}><div className="card-dark rounded-2xl p-7 h-full"><div className="w-11 h-11 rounded-xl bg-orange-400/10 border border-orange-400/30 flex items-center justify-center"><Icon size={18} className="text-lime" /></div><h3 className="font-display text-xl font-semibold mt-5">{item.title}</h3><p className="mt-2 text-sm text-neutral-400 leading-relaxed">{item.desc}</p></div></Reveal>;
-        })}
-      </div>
-    </div>
-  </section>
-);
-
+const SocialProof=()=> <section className="relative overflow-hidden bg-[#0b0a09] py-24 md:py-32">
+ <div className="why-grid-overlay"/>
+ <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-10">
+  <Reveal><div className="grid lg:grid-cols-[1fr_.7fr] gap-8 items-end mb-14"><div><span className="section-kicker"><ShieldCheck size={13}/> THE V-GRAPH DIFFERENCE</span><h2 className="font-display mt-5 text-4xl md:text-6xl font-bold tracking-tight">Small by design.<br/><span className="hero-gradient-text">Intentional by default.</span></h2></div><p className="text-neutral-400 leading-relaxed md:text-lg">A focused studio built around thoughtful execution—not inflated claims or unnecessary layers.</p></div></Reveal>
+  <div className="grid md:grid-cols-3 gap-4">{expectations.map((item,i)=>{const Icon=item.icon;return <Reveal key={item.no} delay={i*.1}><motion.article whileHover={{y:-6}} className="why-card h-full"><div className="flex items-center justify-between"><span className="why-number">{item.no}</span><span className="why-icon"><Icon size={19}/></span></div><h3 className="font-display mt-9 text-xl md:text-2xl font-semibold">{item.title}</h3><p className="mt-3 text-sm leading-6 text-neutral-400">{item.desc}</p><div className="why-card-line"/></motion.article></Reveal>})}</div>
+ </div>
+</section>;
 export default SocialProof;
