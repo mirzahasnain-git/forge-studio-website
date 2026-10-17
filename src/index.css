@@ -205,3 +205,16 @@ code { font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', mon
 @media (max-width: 900px) { .about-orbit-mark { position:relative;right:auto;top:auto;margin:36px auto -20px;width:220px;height:220px; }.about-orbit-core{width:110px;height:110px;font-size:78px}.process-layout{grid-template-columns:1fr}.process-detail-panel{min-height:390px}.page-hero-index{right:24px} }
 @media (max-width: 640px) { .showreel-grid{grid-template-columns:1fr}.showreel-card-featured{margin-top:0}.service-pillar-heading{align-items:flex-start;flex-direction:column}.about-capability-board{grid-template-columns:1fr;padding:24px}.about-board-symbol{display:none}.process-step{padding:15px;grid-template-columns:38px 1fr 28px}.process-step-title{font-size:14px}.process-detail-panel{padding:20px}.label-a{left:0}.label-b{right:0}.page-hero-index{display:none}.cta-bottom-meta{font-size:8px}.service-feature-card{min-height:330px} }
 @media (prefers-reduced-motion: reduce) { .service-card-orb,.about-orbit-ring,.ring-a,.ring-b { animation:none!important; } .marquee-track{animation:none!important} }
+
+/* Portfolio and contact interaction polish */
+.portfolio-top-meta {display:flex;flex-wrap:wrap;gap:12px 26px;margin-top:46px;padding-top:20px;border-top:1px solid rgba(255,255,255,.1)}
+.portfolio-top-meta span {display:inline-flex;align-items:center;gap:8px;color:#91877e;font-size:9px;letter-spacing:.15em}
+.portfolio-filter-shell {display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;padding:20px;border:1px solid rgba(255,255,255,.09);border-radius:20px;background:linear-gradient(120deg,rgba(255,138,36,.05),rgba(255,255,255,.015))}
+.portfolio-play {display:flex;width:58px;height:58px;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.45);border-radius:50%;background:rgba(0,0,0,.55);color:#ffb875;backdrop-filter:blur(10px);transition:transform .3s,background .3s}
+.portfolio-card:hover .portfolio-play {transform:scale(1.12);background:rgba(255,138,36,.18)}
+.portfolio-corner-arrow {display:flex;width:38px;height:38px;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.3);border-radius:50%;color:#fff;background:rgba(0,0,0,.35);backdrop-filter:blur(8px);transition:transform .25s,color .25s,border-color .25s}
+.portfolio-card:hover .portfolio-corner-arrow {transform:rotate(45deg);color:#ffb875;border-color:rgba(255,138,36,.6)}
+.contact-email-panel {background:radial-gradient(ellipse at 0% 0%,rgba(255,138,36,.08),transparent 70%),linear-gradient(145deg,rgba(24,22,20,.8),rgba(10,10,10,.8))}
+.contact-response-note {display:flex;align-items:center;gap:9px;padding:10px 4px;color:#8d857c;font-size:11px;line-height:1.5}
+.contact-live-dot {width:7px;height:7px;flex-shrink:0;border-radius:50%;background:#ff9a43;box-shadow:0 0 12px rgba(255,138,36,.7)}
+@media(max-width:640px){.portfolio-top-meta{gap:12px;margin-top:30px}.portfolio-filter-shell{padding:16px}.portfolio-filter-shell>div:last-child{width:100%}.portfolio-filter{font-size:10px}.portfolio-play{width:48px;height:48px}}
