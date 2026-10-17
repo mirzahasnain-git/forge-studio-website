@@ -10,7 +10,7 @@ export const navLinks = [
 
 export const stats = [
   { value: "02", label: "Service pillars" },
-  { value: "07", label: "Portfolio samples" },
+  { value: "08", label: "Portfolio samples" },
   { value: "01", label: "Studio direction" },
 ];
 
