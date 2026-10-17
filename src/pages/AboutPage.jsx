@@ -1,52 +1,16 @@
 import React from "react";
+import { motion } from "framer-motion";
 import Reveal from "../components/Reveal";
 import CTASection from "../components/CTASection";
 import SocialProof from "../components/SocialProof";
-import { Target, Layers, Rocket } from "lucide-react";
+import { Target, Layers, Rocket, Code2, Clapperboard, Compass, ArrowUpRight } from "lucide-react";
 
-const values = [
-  { icon: Target, title: "Goal-first", desc: "Every project starts with the outcome, audience, and scope—not a template." },
-  { icon: Layers, title: "Two capabilities", desc: "Web development and video editing under one creative direction." },
-  { icon: Rocket, title: "Built to ship", desc: "Focused execution, practical timelines, and a clear review process." },
+const values=[
+ {icon:Target,no:"01",title:"Start with the why",desc:"We ask what the project needs to achieve before deciding what it should look like."},
+ {icon:Layers,no:"02",title:"One joined-up vision",desc:"Web and video can reinforce each other when they are designed with the same brand in mind."},
+ {icon:Rocket,no:"03",title:"Make progress visible",desc:"Clear milestones, practical communication, and useful feedback at each stage."}
 ];
-
-const AboutPage = () => (
-  <>
-    <section className="relative bg-black bg-grid noise overflow-hidden">
-      <div className="relative max-w-7xl mx-auto px-6 md:px-10 py-24 md:py-32">
-        <Reveal>
-          <span className="tag-pill px-3 py-1 rounded-full text-xs font-medium">About V-Graph</span>
-          <h1 className="font-display mt-6 text-5xl md:text-7xl font-bold tracking-tight leading-[1.05] max-w-4xl">One studio for <span className="hero-gradient-text">web + content.</span></h1>
-          <p className="mt-6 max-w-2xl text-neutral-400 text-lg leading-relaxed">V-Graph Studio is a lean digital studio focused on building modern websites and creating video content for businesses and creators.</p>
-        </Reveal>
-      </div>
-    </section>
-    <section className="bg-black py-24 md:py-28 border-y border-white/5">
-      <div className="max-w-7xl mx-auto px-6 md:px-10">
-        <div className="grid md:grid-cols-3 gap-5">
-          {values.map((v, i) => { const Icon=v.icon; return <Reveal key={v.title} delay={i*0.1}><div className="card-dark rounded-2xl p-7 h-full"><div className="w-11 h-11 rounded-xl bg-orange-400/10 border border-orange-400/30 flex items-center justify-center"><Icon size={18} className="text-lime" /></div><h3 className="font-display text-xl font-semibold mt-5">{v.title}</h3><p className="mt-2 text-sm text-neutral-400">{v.desc}</p></div></Reveal>; })}
-        </div>
-        <Reveal>
-          <div className="mt-20 grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="font-display text-4xl md:text-5xl font-bold tracking-tight">Why <span className="hero-gradient-text">V-Graph</span>?</h2>
-              <p className="mt-5 text-neutral-400 leading-relaxed">Businesses often need both a strong website and consistent visual content, but those jobs are usually split across different freelancers. V-Graph brings both capabilities under one studio so the brand stays consistent from the website to the social feed.</p>
-              <p className="mt-4 text-neutral-400 leading-relaxed">We are intentionally keeping the studio lean while we build a portfolio of real client work. That means clear communication, focused execution, and no inflated claims.</p>
-            </div>
-            <div className="card-dark rounded-2xl p-8">
-              <div className="font-display text-3xl font-semibold text-lime">Web + Video</div>
-              <p className="text-sm text-neutral-400 mt-2">Two complementary services. One consistent creative direction.</p>
-              <div className="grid grid-cols-2 gap-6 mt-8">
-                {["React|Modern web builds","Responsive|Mobile-first experience","YouTube|Long-form editing","Short-form|Reels & Shorts"].map(x=>{const [v,l]=x.split("|");return <div key={v}><div className="font-display text-2xl font-semibold text-neutral-100">{v}</div><div className="text-xs text-neutral-500 mt-1">{l}</div></div>})}
-              </div>
-            </div>
-          </div>
-        </Reveal>
-      </div>
-    </section>
-    <SocialProof />
-    <CTASection />
-  </>
-);
-
+const AboutPage=()=> <><section className="page-hero relative overflow-hidden bg-grid noise"><div className="page-hero-glow"/><div className="max-w-7xl mx-auto px-6 md:px-10 py-24 md:py-32 relative z-10"><Reveal><span className="section-kicker"><Compass size={13}/> THE STUDIO / ABOUT</span><h1 className="font-display mt-7 text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[.98]">Good work starts<br/>with <span className="hero-gradient-text">good intent.</span></h1><p className="mt-7 max-w-2xl text-neutral-400 text-lg md:text-xl leading-relaxed">V-Graph Studio brings web development and video editing together to help businesses build a stronger, more consistent presence online.</p></Reveal><div className="about-orbit-mark"><div className="about-orbit-ring"/><div className="about-orbit-core">V<span>.</span></div><span className="about-orbit-caption">DIGITAL + CREATIVE</span></div><div className="page-hero-index">INDEPENDENT STUDIO · REMOTE READY</div></div></section>
+<section className="bg-black py-20 md:py-28"><div className="max-w-7xl mx-auto px-6 md:px-10"><Reveal><div className="mb-12 grid md:grid-cols-[1fr_.7fr] gap-6 items-end"><h2 className="font-display text-4xl md:text-6xl font-bold tracking-tight">A few things<br/><span className="hero-gradient-text">we believe.</span></h2><p className="text-neutral-400 leading-relaxed md:text-lg">A studio's value is not the size of its team. It's the thought behind the work and how well it solves the problem.</p></div></Reveal><div className="grid md:grid-cols-3 gap-4">{values.map((v,i)=>{const Icon=v.icon;return <Reveal key={v.no} delay={i*.1}><motion.article whileHover={{y:-6}} className="about-value-card"><span className="about-value-number">{v.no}</span><span className="about-value-icon"><Icon size={21}/></span><h3 className="font-display mt-9 text-xl md:text-2xl font-semibold">{v.title}</h3><p className="mt-3 text-sm leading-6 text-neutral-400">{v.desc}</p></motion.article></Reveal>})}</div>
+<Reveal><div className="about-capability-board mt-16"><div><span className="section-kicker"><Code2 size={13}/> DIGITAL</span><h3 className="font-display mt-4 text-2xl md:text-3xl font-semibold">Web experiences</h3><p className="mt-3 max-w-md text-sm leading-6 text-neutral-400">Responsive websites, landing pages, React interfaces, and practical launch support.</p></div><div className="about-board-symbol">×</div><div><span className="section-kicker"><Clapperboard size={13}/> CREATIVE</span><h3 className="font-display mt-4 text-2xl md:text-3xl font-semibold">Content that moves</h3><p className="mt-3 max-w-md text-sm leading-6 text-neutral-400">Podcast edits, vertical reels, product promotions, and brand-focused video storytelling.</p></div></div></Reveal></div></section><SocialProof/><CTASection/></>;
 export default AboutPage;
