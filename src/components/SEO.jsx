@@ -1,27 +1,27 @@
 import { useEffect } from "react";
 
-const siteName = "Forge Studio";
-const defaultTitle = "Forge Studio — Web Development & Video Editing";
+const siteName = "V-Graph Studio";
+const defaultTitle = "V-Graph Studio — Web Development & Video Editing";
 const defaultDescription =
-  "Forge Studio builds modern websites, React web applications, and engaging video content for businesses and creators.";
+  "V-Graph Studio creates modern websites, web experiences, and engaging video content for businesses, creators, and brands.";
 
 const pageMeta = {
   "/": { title: defaultTitle, description: defaultDescription },
   "/services": {
-    title: "Web Development & Video Editing Services | Forge Studio",
-    description: "Explore Forge Studio services for business websites, landing pages, React web applications, YouTube editing, Shorts, Reels, and video ads.",
+    title: "Web Development & Video Editing Services | V-Graph Studio",
+    description: "Explore V-Graph Studio services for business websites, landing pages, React web applications, YouTube editing, Shorts, Reels, and video ads.",
   },
   "/portfolio": {
-    title: "Web Development & Video Editing Portfolio | Forge Studio",
-    description: "View Forge Studio web projects, React applications, YouTube edits, podcast editing, and short-form video work.",
+    title: "Creative Portfolio | Web Development & Video Editing | V-Graph Studio",
+    description: "Explore V-Graph Studio web projects, podcast edits, a cinematic restaurant promotion, and a short-form product advertisement.",
   },
   "/about": {
-    title: "About Forge Studio | Web & Video Creative Studio",
-    description: "Learn about Forge Studio, a lean digital studio combining web development and video editing for businesses and creators.",
+    title: "About V-Graph Studio | Web & Video Creative Studio",
+    description: "Learn about V-Graph Studio, combining web development and video editing for businesses and creators.",
   },
   "/contact": {
-    title: "Contact Forge Studio | Start a Project",
-    description: "Tell Forge Studio about your website, web application, YouTube editing, Shorts, Reels, or video project and start a conversation.",
+    title: "Contact V-Graph Studio | Start a Project",
+    description: "Tell V-Graph Studio about your website, web application, YouTube editing, Shorts, Reels, or video project.",
   },
 };
 
@@ -61,11 +61,11 @@ export default function SEO() {
     }
     canonical.href = canonicalUrl;
 
-    let structuredData = document.head.querySelector('script[data-forge-schema="organization"]');
+    let structuredData = document.head.querySelector('script[data-vgraph-schema="organization"]');
     if (!structuredData) {
       structuredData = document.createElement("script");
       structuredData.type = "application/ld+json";
-      structuredData.dataset.forgeSchema = "organization";
+      structuredData.dataset.vgraphSchema = "organization";
       document.head.appendChild(structuredData);
     }
 

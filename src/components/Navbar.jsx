@@ -26,24 +26,22 @@ const Navbar = () => {
       transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
       className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "backdrop-blur-md bg-black/60 border-b border-white/5"
+          ? "backdrop-blur-md bg-black/75 border-b border-white/10"
           : "bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-10 h-16 md:h-20 flex items-center justify-between">
-        {/* Left Side: Logo */}
-        <Link to="/" className="flex items-center gap-2.5 group">
-          <div className="w-9 h-9 rounded-full border border-lime-300/40 flex items-center justify-center bg-black/40 group-hover:border-lime-300 transition-colors">
-            <Flame size={16} className="text-lime" />
+        <Link to="/" className="flex items-center gap-2.5 group" aria-label="V-Graph Studio home">
+          <div className="w-9 h-9 rounded-xl border border-orange-400/50 flex items-center justify-center bg-black/50 group-hover:border-orange-400 transition-colors">
+            <Flame size={17} className="text-lime" />
           </div>
           <span className="font-display text-lg md:text-xl font-semibold text-lime tracking-tight">
-            Forge Studio
+            V-Graph <span className="text-white">Studio</span>
           </span>
         </Link>
 
-        {/* Right Side: Links */}
         <div className="flex items-center">
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden md:flex items-center gap-8" aria-label="Main navigation">
             {navLinks.map((l) => (
               <NavLink
                 key={l.path}
@@ -62,19 +60,19 @@ const Navbar = () => {
           <button
             onClick={() => setOpen(!open)}
             className="md:hidden text-neutral-200 p-2 ml-4"
-            aria-label="menu"
+            aria-label={open ? "Close menu" : "Open menu"}
+            aria-expanded={open}
           >
             {open ? <X size={22} /> : <Menu size={22} />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Menu */}
       {open && (
         <motion.div
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
-          className="md:hidden border-t border-white/5 bg-black/90 backdrop-blur-md"
+          className="md:hidden border-t border-white/10 bg-black/95 backdrop-blur-md"
         >
           <div className="px-6 py-4 flex flex-col gap-3">
             {navLinks.map((l) => (
