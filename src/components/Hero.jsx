@@ -61,7 +61,7 @@ const Hero = () => {
             <div className="mt-12 flex gap-8 md:gap-12">
               {stats.map((s, i) => (
                 <motion.div key={s.label} initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.42 + i * 0.1 }} className="hero-stat">
-                  <div className="font-display text-2xl md:text-3xl font-semibold text-neutral-100">{s.value}<span className="text-orange-400">+</span></div>
+                  <div className="font-display text-2xl md:text-3xl font-semibold text-neutral-100">{s.value}</div>
                   <div className="mt-1 text-[11px] md:text-xs text-neutral-500">{s.label}</div>
                 </motion.div>
               ))}
