@@ -25,8 +25,8 @@ const Hero = () => {
       <div className="hero-ambient hero-ambient-two" />
       <div className="hero-scanline" aria-hidden="true" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-10 pt-28 pb-20 md:pt-32 md:pb-28">
-        <div className="grid lg:grid-cols-[1.04fr_0.96fr] gap-12 lg:gap-6 items-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-10 pt-16 pb-10 md:pt-20 md:pb-12">
+        <div className="grid lg:grid-cols-[1.04fr_0.96fr] gap-8 lg:gap-4 items-center">
           <div className="relative z-10">
             <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.65 }} className="inline-flex items-center gap-2 rounded-full border border-orange-400/25 bg-orange-400/[0.07] px-3.5 py-2 text-[11px] md:text-xs uppercase tracking-[0.17em] text-orange-200">
               <span className="relative flex h-2 w-2"><span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-orange-400 opacity-60" /><span className="relative inline-flex h-2 w-2 rounded-full bg-orange-400" /></span>
@@ -75,10 +75,10 @@ const Hero = () => {
             initial={{ opacity: 0, scale: 0.94, x: 20 }}
             animate={{ opacity: 1, scale: 1, x: 0 }}
             transition={{ duration: 1, delay: 0.18, ease: [0.22, 1, 0.36, 1] }}
-            className="hero-scene relative mx-auto w-full max-w-[590px] min-h-[420px] sm:min-h-[500px] flex items-center justify-center"
+            className="hero-scene relative mx-auto w-full max-w-[590px] min-h-[360px] sm:min-h-[420px] flex items-center justify-center"
             style={{ perspective: 1100 }}
           >
-            <motion.div className="hero-3d-stage relative w-full h-[400px] sm:h-[470px]" style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}>
+            <motion.div className="hero-3d-stage relative w-full h-[340px] sm:h-[400px]" style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}>
               <div className="hero-orbit hero-orbit-one" />
               <div className="hero-orbit hero-orbit-two" />
               <div className="hero-core">
