@@ -278,3 +278,31 @@ code { font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', mon
 @keyframes portfolio-orbit-spin{to{transform:rotate(360deg)}}
 @media(max-width:639px){.portfolio-card-body{padding:17px;min-height:170px}.portfolio-category{top:12px;left:12px}.portfolio-cover-caption{left:14px;bottom:14px}.portfolio-corner-arrow{right:12px;bottom:12px;width:34px;height:34px}.portfolio-play{width:49px;height:49px}.portfolio-video-note{display:none}.portfolio-top-meta{gap:12px;margin-top:30px}}
 @media(prefers-reduced-motion:reduce){.portfolio-orbit,.portfolio-orbit-two{animation:none!important}.portfolio-card-uniform,.portfolio-cover img,.portfolio-play,.portfolio-corner-arrow,.portfolio-filter{transition:none!important}}
+
+/* V-Graph services ticker — cohesive orange studio identity */
+.services-marquee{position:relative;background:radial-gradient(ellipse at 50% 0%,rgba(255,138,36,.11),transparent 62%),linear-gradient(180deg,#0c0907 0%,#080808 100%);border-top:1px solid rgba(255,138,36,.18);border-bottom:1px solid rgba(255,138,36,.18);isolation:isolate}
+.services-marquee-topline,.services-marquee-bottomline{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:13px clamp(20px,4vw,58px);font-size:9px;letter-spacing:.16em;color:#8e8378}
+.services-marquee-topline{border-bottom:1px solid rgba(255,255,255,.055)}
+.services-marquee-kicker{display:inline-flex;align-items:center;gap:8px;color:#ffad63;font-weight:700}
+.services-marquee-kicker svg{color:#ff8a24}
+.services-marquee-note{display:flex;align-items:center;gap:9px}
+.services-marquee-note i{width:4px;height:4px;border-radius:50%;background:#ff8a24;box-shadow:0 0 10px rgba(255,138,36,.7)}
+.services-marquee-stage{position:relative;overflow:hidden;padding:22px 0 25px}
+.services-marquee-track{width:max-content;animation:services-marquee-scroll 38s linear infinite;will-change:transform}
+.services-marquee-stage:hover .services-marquee-track{animation-play-state:paused}
+.services-marquee-item{gap:clamp(22px,3.4vw,52px);padding-right:clamp(22px,3.4vw,52px)}
+.services-marquee-word{font-family:'Sora','Inter',sans-serif;font-size:clamp(32px,5vw,66px);line-height:1.1;font-weight:650;letter-spacing:-.055em;color:#f2eee9;transition:color .25s,transform .25s;text-shadow:0 2px 22px rgba(0,0,0,.25)}
+.services-marquee-item:hover .services-marquee-word{color:#ffb36c;transform:translateY(-2px)}
+.services-marquee-spark{width:30px;height:30px;display:inline-flex;align-items:center;justify-content:center;border:1px solid rgba(255,138,36,.36);border-radius:50%;color:#ff9c46;background:rgba(255,138,36,.07);transition:transform .3s,background .3s}
+.services-marquee-item:hover .services-marquee-spark{transform:rotate(45deg);background:rgba(255,138,36,.18)}
+.services-marquee-glow{position:absolute;left:38%;top:-130px;width:320px;height:260px;border-radius:50%;background:rgba(255,105,30,.07);filter:blur(65px);pointer-events:none}
+.services-marquee-edge{position:absolute;top:0;bottom:0;width:clamp(28px,7vw,110px);z-index:2;pointer-events:none}
+.services-marquee-edge-left{left:0;background:linear-gradient(90deg,#0a0807,transparent)}
+.services-marquee-edge-right{right:0;background:linear-gradient(270deg,#080808,transparent)}
+.services-marquee-bottomline{border-top:1px solid rgba(255,255,255,.045);font-size:8px;color:#655b51}
+.services-marquee-progress{height:2px;flex:1;max-width:180px;background:rgba(255,255,255,.09);overflow:hidden}
+.services-marquee-progress i{display:block;width:36%;height:100%;background:linear-gradient(90deg,#ffb15c,#ff5c35);box-shadow:0 0 12px rgba(255,138,36,.6);animation:services-marquee-progress 5s ease-in-out infinite alternate}
+@keyframes services-marquee-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes services-marquee-progress{from{transform:translateX(0)}to{transform:translateX(180%)}}
+@media(max-width:640px){.services-marquee-topline,.services-marquee-bottomline{padding:11px 17px}.services-marquee-note{font-size:7px;gap:5px}.services-marquee-stage{padding:20px 0}.services-marquee-word{font-size:34px}.services-marquee-item{gap:19px;padding-right:19px}.services-marquee-spark{width:25px;height:25px}.services-marquee-bottomline{font-size:7px}}
+@media(prefers-reduced-motion:reduce){.services-marquee-track,.services-marquee-progress i{animation:none!important}.services-marquee-track{transform:none}}
