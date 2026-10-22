@@ -5,14 +5,14 @@ import { portfolio } from "../mock";
 import { ArrowUpRight, Github, ExternalLink, Play, X, Layers3, Code2, Clapperboard, Sparkles } from "lucide-react";
 import CTASection from "../components/CTASection";
 
-const categories=["All","Web Development","Web Applications","Podcast Editing","Business Promotions","Product Advertisements"];
+const categories=["All","Web Development","Web Applications","Podcast Editing","Business Promotions","Product Advertisements","Food & Beverage Ads","Fashion & Apparel Ads","Lifestyle Product Ads"];
 
 function VideoFrame({item,onClose}) {
  const portrait=item.aspect==="portrait";
  return <motion.div initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}} transition={{duration:.2}} className="fixed inset-0 z-[80] flex items-center justify-center bg-black/90 p-4 backdrop-blur-md" role="dialog" aria-modal="true" aria-label={item.title} onClick={onClose}>
   <motion.div initial={{opacity:0,scale:.94,y:18}} animate={{opacity:1,scale:1,y:0}} exit={{opacity:0,scale:.97,y:8}} transition={{type:"spring",damping:24,stiffness:260}} className={`relative w-full ${portrait?"max-w-sm":"max-w-5xl"}`} onClick={e=>e.stopPropagation()}>
    <button onClick={onClose} aria-label="Close video" className="portfolio-modal-close absolute -top-11 right-0 rounded-full border border-white/20 bg-black/70 p-2 text-white hover:text-orange-300"><X size={20}/></button>
-   <div className={`relative overflow-hidden rounded-2xl border border-white/10 bg-black shadow-2xl ${portrait?"aspect-[9/16]":"aspect-video"}`}><iframe className="absolute inset-0 h-full w-full" src={`https://www.youtube-nocookie.com/embed/${item.videoId}?autoplay=1&rel=0`} title={item.title} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen/></div>
+   <div className={`relative overflow-hidden rounded-2xl border border-white/10 bg-black shadow-2xl ${portrait?"aspect-[9/16]":"aspect-video"}`}>{item.videoSrc ? <video className="absolute inset-0 h-full w-full object-contain" src={item.videoSrc} title={item.title} controls autoPlay playsInline /> : <iframe className="absolute inset-0 h-full w-full" src={`https://www.youtube-nocookie.com/embed/${item.videoId}?autoplay=1&rel=0`} title={item.title} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen/>}</div>
    <p className="mt-3 text-sm text-neutral-300">{item.title}</p>
   </motion.div>
  </motion.div>;
@@ -39,7 +39,7 @@ const PortfolioPage=()=>{
     <motion.div layout className="portfolio-grid mt-8">
      <AnimatePresence mode="popLayout" initial={false}>
       {items.map((p,index)=>{
-       const isVideo=Boolean(p.videoId);
+       const isVideo=Boolean(p.videoId || p.videoSrc);
        return <motion.article layout key={p.id} initial={{opacity:0,y:24,scale:.98}} animate={{opacity:1,y:0,scale:1}} exit={{opacity:0,y:10,scale:.97}} transition={{duration:.34,delay:Math.min(index*.045,.25),layout:{duration:.35}}} whileHover={{y:-6}} className="portfolio-card portfolio-card-uniform card-dark group">
         <div className="portfolio-cover-wrap">
          {isVideo?<button type="button" onClick={()=>setActiveVideo(p)} aria-label={`Play ${p.title}`} className="portfolio-cover portfolio-cover-button">
