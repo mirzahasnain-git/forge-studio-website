@@ -10,7 +10,7 @@ export const navLinks = [
 
 export const stats = [
   { value: "02", label: "Service pillars" },
-  { value: "08", label: "Portfolio samples" },
+  { value: "18", label: "Portfolio samples" },
   { value: "01", label: "Studio direction" },
 ];
 
@@ -76,6 +76,67 @@ export const portfolio = [
     cover: "https://i.ytimg.com/vi/z3_VXNtlL30/hqdefault.jpg",
     desc: "A vertical product advertisement using bold promotional text and focused apparel visuals.",
     videoId: "z3_VXNtlL30", aspect: "portrait", linkLabel: "Watch reel",
+  },
+
+  {
+    id: 9, title: "Cafe Brand Film", category: "Food & Beverage Ads",
+    cover: "https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=1000&q=80",
+    desc: "A warm cafe promotional edit highlighting the atmosphere, drinks, and in-store experience.",
+    videoSrc: "/videos/Cafe-Ad.mp4", aspect: "portrait",
+  },
+  {
+    id: 10, title: "Cafe Social Ad", category: "Food & Beverage Ads",
+    cover: "https://images.unsplash.com/photo-1559925393-8be0ec4767c8?w=1000&q=80",
+    desc: "A short-form cafe advertisement designed for social feeds and local brand awareness.",
+    videoSrc: "/videos/Cafe2-Ad.mp4", aspect: "portrait",
+  },
+  {
+    id: 11, title: "Juice Product Ad", category: "Food & Beverage Ads",
+    cover: "https://images.unsplash.com/photo-1622597467836-f3285f2131b8?w=1000&q=80",
+    desc: "A vibrant beverage promotion showcasing product color, freshness, and visual appeal.",
+    videoSrc: "/videos/Juice-Ad.mp4", aspect: "portrait",
+  },
+  {
+    id: 12, title: "Drinks Campaign", category: "Food & Beverage Ads",
+    cover: "https://images.unsplash.com/photo-1513558161293-cdaf765edfd7?w=1000&q=80",
+    desc: "A polished drinks advertisement with an energetic, product-first creative direction.",
+    videoSrc: "/videos/Drinks-Ad.mp4", aspect: "portrait",
+  },
+  {
+    id: 13, title: "Sneaker Campaign", category: "Fashion & Apparel Ads",
+    cover: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=1000&q=80",
+    desc: "A bold footwear product ad focused on details, movement, and a premium retail look.",
+    videoSrc: "/videos/Shoes2-Ad.mp4", aspect: "portrait",
+  },
+  {
+    id: 14, title: "Shoe Product Ad", category: "Fashion & Apparel Ads",
+    cover: "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=1000&q=80",
+    desc: "A concise shoe advertisement built to spotlight the product and strengthen brand recall.",
+    videoSrc: "/videos/Shoe-Ad.mp4", aspect: "portrait",
+  },
+  {
+    id: 15, title: "Hoodie Campaign", category: "Fashion & Apparel Ads",
+    cover: "https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=1000&q=80",
+    desc: "A contemporary apparel edit made for social promotion and product discovery.",
+    videoSrc: "/videos/Hoddie-Ad.mp4", aspect: "portrait",
+  },
+  {
+    id: 16, title: "Clothing Brand Ad", category: "Fashion & Apparel Ads",
+    cover: "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=1000&q=80",
+    desc: "A fashion-focused promotional video showcasing style, fit, and brand mood.",
+    videoSrc: "/videos/Clothing-Ad.mp4", aspect: "portrait",
+  },
+  {
+    id: 17, title: "Perfume Product Film", category: "Lifestyle Product Ads",
+    cover: "https://images.unsplash.com/photo-1541643600914-78b084683601?w=1000&q=80",
+    desc: "A refined fragrance ad with a cinematic, premium lifestyle direction.",
+    videoSrc: "/videos/Perfume-Ad.mp4", aspect: "portrait",
+  },
+  {
+    id: 18, title: "Purse Product Ad", category: "Lifestyle Product Ads",
+    cover: "https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=1000&q=80",
+    desc: "A lifestyle product promotion that puts materials, shape, and styling at the center.",
+    videoSrc: "/videos/Purse-Ad.mp4", aspect: "portrait",
   },
 ];
 export const showreels = [
