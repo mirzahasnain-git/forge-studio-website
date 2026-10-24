@@ -25,7 +25,7 @@ const Hero = () => {
       <div className="hero-ambient hero-ambient-two" />
       <div className="hero-scanline" aria-hidden="true" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-10 pt-8 pb-20 md:pt-10 md:pb-28">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-10 pt-28 pb-20 md:pt-32 md:pb-28">
         <div className="grid lg:grid-cols-[1.04fr_0.96fr] gap-12 lg:gap-6 items-center">
           <div className="relative z-10">
             <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.65 }} className="inline-flex items-center gap-2 rounded-full border border-orange-400/25 bg-orange-400/[0.07] px-3.5 py-2 text-[11px] md:text-xs uppercase tracking-[0.17em] text-orange-200">
