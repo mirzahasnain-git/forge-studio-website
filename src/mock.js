@@ -92,19 +92,19 @@ export const portfolio = [
   },
   {
     id: 11, title: "Juice Product Ad", category: "Food & Beverage Ads",
-    cover: "https://images.unsplash.com/photo-1622597467836-f3285f2131b8?w=1000&q=80",
+    cover: "/images/juice-product-ad.png",
     desc: "A vibrant beverage promotion showcasing product color, freshness, and visual appeal.",
     videoSrc: "/videos/Juice-Ad.mp4", aspect: "portrait",
   },
   {
     id: 12, title: "Drinks Campaign", category: "Food & Beverage Ads",
-    cover: "https://images.unsplash.com/photo-1517701604599-bb29b565090c?w=1000&q=80",
+    cover: "/images/drinks-campaign.png",
     desc: "A polished drinks advertisement with an energetic, product-first creative direction.",
     videoSrc: "/videos/Drinks-Ad.mp4", aspect: "portrait",
   },
   {
     id: 13, title: "Sneaker Campaign", category: "Fashion & Apparel Ads",
-    cover: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=1000&q=80",
+    cover: "/images/sneaker-campaign.png",
     desc: "A bold footwear product ad focused on details, movement, and a premium retail look.",
     videoSrc: "/videos/Shoes2-Ad.mp4", aspect: "portrait",
   },
