@@ -306,3 +306,15 @@ code { font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', mon
 @keyframes services-marquee-progress{from{transform:translateX(0)}to{transform:translateX(180%)}}
 @media(max-width:640px){.services-marquee-topline,.services-marquee-bottomline{padding:11px 17px}.services-marquee-note{font-size:7px;gap:5px}.services-marquee-stage{padding:20px 0}.services-marquee-word{font-size:34px}.services-marquee-item{gap:19px;padding-right:19px}.services-marquee-spark{width:25px;height:25px}.services-marquee-bottomline{font-size:7px}}
 @media(prefers-reduced-motion:reduce){.services-marquee-track,.services-marquee-progress i{animation:none!important}.services-marquee-track{transform:none}}
+
+
+/* Hero layout refinement: bring both floating cards into the initial viewport */
+@media (min-width: 1024px) {
+  .hero-scene {
+    min-height: 400px;
+    margin-top: -76px;
+  }
+  .hero-3d-stage {
+    height: 400px;
+  }
+}
