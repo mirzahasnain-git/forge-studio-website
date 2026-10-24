@@ -98,7 +98,7 @@ export const portfolio = [
   },
   {
     id: 12, title: "Drinks Campaign", category: "Food & Beverage Ads",
-    cover: "https://images.unsplash.com/photo-1513558161293-cdaf765edfd7?w=1000&q=80",
+    cover: "https://images.unsplash.com/photo-1517701604599-bb29b565090c?w=1000&q=80",
     desc: "A polished drinks advertisement with an energetic, product-first creative direction.",
     videoSrc: "/videos/Drinks-Ad.mp4", aspect: "portrait",
   },
