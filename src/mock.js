@@ -10,7 +10,7 @@ export const navLinks = [
 
 export const stats = [
   { value: "02", label: "Service pillars" },
-  { value: "18", label: "Portfolio samples" },
+  { value: "21", label: "Portfolio samples" },
   { value: "01", label: "Studio direction" },
 ];
 
@@ -30,22 +30,40 @@ export const marqueeWords = ["Web Development", "React", "Landing Pages", "YouTu
 
 export const portfolio = [
   {
-    id: 1, title: "TaskFlow", category: "Web Applications",
-    cover: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1000&q=80",
-    desc: "A React-based task management interface focused on organizing projects, tasks, and workflow.",
-    demo: "https://mirzahasnain-git.github.io/TaskFlow/", github: "https://github.com/mirzahasnain-git/taskflow",
+    id: 19, title: "PinkRoof Interiors", category: "Web Development",
+    cover: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1000&q=80",
+    desc: "A luxury interior design website presenting residential and commercial spaces, design services, featured work, and consultation enquiries.",
+    demo: "https://pinkroof.in/",
   },
   {
-    id: 2, title: "Career Catalyst", category: "Web Development",
-    cover: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1000&q=80",
-    desc: "A career guidance and blogging website with a responsive Bootstrap layout, content cards, and interactive sections.",
-    demo: "https://mirzahasnain-git.github.io/Career-Catalyst/",
+    id: 20, title: "Brewfeild Café", category: "Web Development",
+    cover: "https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=1000&q=80",
+    desc: "A café website built to introduce the brand and give visitors an inviting path to explore its offering and location.",
+    demo: "https://brewfeild-beta.vercel.app/",
   },
   {
-    id: 3, title: "Tic-Tac-Toe", category: "Web Development",
-    cover: "https://images.unsplash.com/photo-1611996575749-79a3a250f948?w=1000&q=80",
-    desc: "A browser game built with HTML, CSS, and JavaScript with interactive game logic.",
-    demo: "https://mirzahasnain-git.github.io/Tic-Tac-Toe/",
+    id: 21, title: "Mannat Luxury Events", category: "Web Development",
+    cover: "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=1000&q=80",
+    desc: "A luxury event-planning website focused on showcasing event experiences, services, and enquiry opportunities.",
+    demo: "https://mannat-luxury-event.vercel.app/",
+  },
+  {
+    id: 22, title: "The Noble", category: "Web Development",
+    cover: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=1000&q=80",
+    desc: "A media-publishing website designed to organize editorial stories and make articles and updates easy to discover.",
+    demo: "https://the-noble.vercel.app/",
+  },
+  {
+    id: 23, title: "Ultradium Trading", category: "Web Development",
+    cover: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=1000&q=80",
+    desc: "An industrial B2B website for valves, welding machines, and automotive equipment, presenting product areas and business enquiries.",
+    demo: "https://ultradiumtrading.com/",
+  },
+  {
+    id: 24, title: "World Leaders Consortium", category: "Web Development",
+    cover: "https://images.unsplash.com/photo-1528605248644-14dd04022da1?w=1000&q=80",
+    desc: "A global consortium website sharing its leadership mission, programmes, articles, and international dialogue.",
+    demo: "https://worldleadersconsortium.com/",
   },
   {
     id: 4, title: "Podcast Teaser — Stock Market", category: "Podcast Editing",
