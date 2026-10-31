@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Reveal from "../components/Reveal";
-import { Mail, Send, Check, ArrowUpRight, Code2, Clapperboard, MessageCircle, Sparkles } from "lucide-react";
+import { Mail, Send, Check, ArrowUpRight, Code2, Clapperboard, MessageCircle, Sparkles, Instagram, Facebook, Linkedin } from "lucide-react";
 import { useToast } from "../hooks/use-toast";
 
 const FORMSPREE_ENDPOINT="https://formspree.io/f/myekebpn";
@@ -29,7 +29,19 @@ const ContactPage=()=>{
    <div className="grid lg:grid-cols-[.82fr_1.18fr] gap-8 lg:gap-12 items-start">
     <Reveal><aside className="space-y-4">
      {options.map((o,i)=>{const Icon=o.icon;return <motion.div whileHover={{x:5}} key={o.title} className="contact-side-card flex gap-4 items-start"><span className="service-icon service-icon-small"><Icon size={17}/></span><div><h2 className="text-sm font-semibold">{o.title}</h2><p className="mt-1 text-xs leading-5 text-neutral-500">{o.desc}</p></div></motion.div>})}
-     <div className="contact-side-card contact-email-panel"><span className="section-kicker"><Mail size={13}/> SAY HELLO</span><a href="mailto:mirzahasnainalam@gmail.com" className="mt-4 flex items-center justify-between gap-3 text-sm font-medium text-neutral-100 transition-colors hover:text-orange-200 break-all">mirzahasnainalam@gmail.com <ArrowUpRight size={16} className="shrink-0"/></a><p className="mt-3 text-xs text-neutral-500">Prefer email? Send a short note and we'll take it from there.</p></div>
+     <div className="contact-side-card contact-email-panel">
+      <span className="section-kicker"><Mail size={13}/> SAY HELLO</span>
+      <a href="mailto:vgraph.co@gmail.com" className="mt-4 flex items-center justify-between gap-3 text-sm font-medium text-neutral-100 transition-colors hover:text-orange-200 break-all">vgraph.co@gmail.com <ArrowUpRight size={16} className="shrink-0"/></a>
+      <a href="https://wa.me/919555716875" target="_blank" rel="noreferrer" className="mt-3 flex items-center gap-2 text-sm text-neutral-300 transition-colors hover:text-orange-200"><MessageCircle size={15}/> +91 95557 16875 <ArrowUpRight size={14}/></a>
+      <p className="mt-3 text-xs text-neutral-500">Prefer email or WhatsApp? Send a short note and we'll take it from there.</p>
+      <div className="mt-5 flex items-center gap-3" aria-label="V-Graph Studio social media links">
+       {[
+        {label:"Instagram",href:"https://www.instagram.com/vgraphstudio?exln=ZHdldzBqNXoyOHhp",Icon:Instagram},
+        {label:"Facebook",href:"https://www.facebook.com/share/1A45mEuro4/",Icon:Facebook},
+        {label:"LinkedIn",href:"https://www.linkedin.com/in/v-graph-studio-230489448",Icon:Linkedin},
+       ].map(({label,href,Icon})=><a key={label} href={href} target="_blank" rel="noreferrer" aria-label={label} title={label} className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/[0.03] text-neutral-400 transition-all duration-300 hover:-translate-y-1 hover:border-orange-400/60 hover:bg-orange-400/10 hover:text-orange-300"><Icon size={17}/></a>)}
+      </div>
+     </div>
      <div className="contact-response-note"><span className="contact-live-dot"/> Clear brief. Direct communication. Practical next steps.</div>
     </aside></Reveal>
     <Reveal delay={.12}><div className="contact-panel card-dark rounded-3xl p-6 md:p-9">
