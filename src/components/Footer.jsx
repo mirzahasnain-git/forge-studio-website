@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Flame, Mail } from "lucide-react";
+import { Flame, Mail, Instagram, Facebook, Linkedin, MessageCircle, ArrowUpRight } from "lucide-react";
 
 const Footer = () => {
-  const contactEmail = import.meta.env.VITE_CONTACT_EMAIL || "mirzahasnainalam@gmail.com";
+  const contactEmail = import.meta.env.VITE_CONTACT_EMAIL || "vgraph.co@gmail.com";
 
   return (
     <footer className="relative border-t border-white/10 bg-black">
@@ -22,6 +22,21 @@ const Footer = () => {
             <a href={`mailto:${contactEmail}`} className="inline-flex items-center gap-2 mt-5 text-sm text-neutral-300 hover:text-lime transition-colors">
               <Mail size={14} className="text-lime" /> {contactEmail}
             </a>
+            <a href="https://wa.me/919555716875" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 mt-3 text-sm text-neutral-300 hover:text-lime transition-colors">
+              <MessageCircle size={14} className="text-lime" /> +91 95557 16875 <ArrowUpRight size={13}/>
+            </a>
+            <div className="mt-6 flex items-center gap-3" aria-label="V-Graph Studio social media links">
+              {[
+                { label: "Instagram", href: "https://www.instagram.com/vgraphstudio?exln=ZHdldzBqNXoyOHhp", Icon: Instagram },
+                { label: "Facebook", href: "https://www.facebook.com/share/1A45mEuro4/", Icon: Facebook },
+                { label: "LinkedIn", href: "https://www.linkedin.com/in/v-graph-studio-230489448", Icon: Linkedin },
+              ].map(({ label, href, Icon }) => (
+                <a key={label} href={href} target="_blank" rel="noreferrer" aria-label={label} title={label}
+                  className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/[0.03] text-neutral-400 transition-all duration-300 hover:-translate-y-1 hover:border-orange-400/60 hover:bg-orange-400/10 hover:text-orange-300">
+                  <Icon size={17}/>
+                </a>
+              ))}
+            </div>
           </div>
 
           <div>
