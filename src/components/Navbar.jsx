@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Menu, X, Flame } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { navLinks } from "../mock";
 
 const Navbar = () => {
@@ -32,8 +32,8 @@ const Navbar = () => {
     >
       <div className="max-w-7xl mx-auto px-6 md:px-10 h-16 md:h-20 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2.5 group" aria-label="V-Graph Studio home">
-          <div className="w-9 h-9 rounded-xl border border-orange-400/50 flex items-center justify-center bg-black/50 group-hover:border-orange-400 transition-colors">
-            <Flame size={17} className="text-lime" />
+          <div className="w-10 h-10 flex items-center justify-center shrink-0">
+            <img src="/v-graph-logo.svg" alt="V-Graph Studio logo" className="h-full w-full object-contain" />
           </div>
           <span className="font-display text-lg md:text-xl font-semibold text-lime tracking-tight">
             V-Graph <span className="text-white">Studio</span>
