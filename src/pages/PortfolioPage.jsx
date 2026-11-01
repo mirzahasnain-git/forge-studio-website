@@ -46,14 +46,14 @@ function VideoFrame({item,onClose}) {
    animate={{opacity:1,scale:1,y:0}}
    exit={{opacity:0,scale:.98,y:6}}
    transition={{duration:.24,ease:[.22,1,.36,1]}}
-   className={`relative flex max-h-[92dvh] w-full flex-col items-center ${portrait?"max-w-[min(420px,92vw)]":"max-w-5xl"}`}
+   className={`relative flex w-full flex-col items-center ${portrait?"max-w-[min(420px,92vw)]":"max-w-5xl"}`}
    onClick={e=>e.stopPropagation()}
   >
    <button onClick={onClose} aria-label="Close video" className="portfolio-modal-close absolute -top-11 right-0 rounded-full border border-white/20 bg-black/80 p-2 text-white hover:text-orange-300"><X size={20}/></button>
-   <div className={`relative w-full overflow-hidden rounded-2xl border border-white/10 bg-black shadow-2xl ${portrait?"aspect-[9/16] max-h-[78dvh]":"aspect-video max-h-[78dvh]"}`}>
+   <div className={`relative overflow-hidden rounded-2xl border border-white/10 bg-black shadow-2xl ${portrait?"w-[min(420px,calc(78dvh*9/16))] aspect-[9/16]":"w-full max-w-5xl aspect-video max-h-[78dvh]"}`}>
     {item.videoSrc
-     ? <video className="absolute inset-0 h-full w-full object-contain" src={item.videoSrc} title={item.title} controls autoPlay playsInline preload="metadata"/>
-     : <iframe className="absolute inset-0 h-full w-full" src={`https://www.youtube-nocookie.com/embed/${item.videoId}?autoplay=1&rel=0`} title={item.title} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen/>
+     ? <video className="absolute inset-0 block h-full w-full bg-black object-contain" src={item.videoSrc} title={item.title} poster={item.cover} controls autoPlay playsInline preload="auto" controlsList="nodownload" onError={e=>{e.currentTarget.parentElement.dataset.videoError="true";}}/>
+     : <iframe className="absolute inset-0 block h-full w-full" src={`https://www.youtube-nocookie.com/embed/${item.videoId}?autoplay=1&rel=0&playsinline=1`} title={item.title} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen/>
     }
    </div>
    <p className="mt-2 text-center text-sm text-neutral-300">{item.title}</p>
@@ -107,7 +107,7 @@ const PortfolioPage=()=>{
           <span className="portfolio-cover-caption"><span className="portfolio-project-index">V-GRAPH / PROJECT {String(p.id).padStart(2,"0")}</span><span className="portfolio-cover-title">{p.title}</span></span>
           <span className="portfolio-corner-arrow"><ArrowUpRight size={18}/></span>
          </button>:<div className="portfolio-cover portfolio-cover-static">
-          <img src={p.cover} alt={p.title} loading="lazy" decoding="async"/>
+          <img className="portfolio-cover-image" src={p.cover} alt={p.title} loading="lazy" decoding="async" onError={e=>{e.currentTarget.style.display="none";e.currentTarget.parentElement.classList.add("portfolio-cover-fallback");}}/>
           <span className="portfolio-image-shade"/><span className="portfolio-cover-grid"/>
           <span className="tag-pill portfolio-category">{p.category}</span>
           <span className="portfolio-cover-caption"><span className="portfolio-project-index">V-GRAPH / PROJECT {String(p.id).padStart(2,"0")}</span><span className="portfolio-cover-title">{p.title}</span></span>
