@@ -345,3 +345,16 @@ button, a { touch-action: manipulation; }
   .route-transition { animation: none !important; }
   img, a, button, .card-dark, .portfolio-card-uniform, .service-feature-card { transition-duration: .01ms !important; }
 }
+
+
+/* Reference-inspired cinematic scroll polish */
+.vg-scroll-progress { position:fixed; inset:0 auto auto 0; z-index:100; width:100%; height:2px; transform-origin:0 50%; background:linear-gradient(90deg,#ffb15c,#ff7b22,#ff5c35); box-shadow:0 0 12px rgba(255,138,36,.42); pointer-events:none; }
+.route-transition { will-change: opacity, transform; }
+.portfolio-card-uniform, .service-feature-card, .why-card, .showreel-card { will-change: transform; }
+.portfolio-cover img, .showreel-thumbnail img { transform:scale(1); transition:transform 850ms cubic-bezier(.2,.75,.25,1), filter 650ms ease; }
+@media (hover:hover) and (pointer:fine) {
+  .portfolio-card-uniform:hover .portfolio-cover img, .showreel-card:hover .showreel-thumbnail img { transform:scale(1.075); filter:saturate(1.08); }
+  .portfolio-card-uniform .portfolio-play, .showreel-play-button { transition:transform 420ms cubic-bezier(.2,.75,.25,1), box-shadow 420ms ease; }
+  .portfolio-card-uniform:hover .portfolio-play, .showreel-card:hover .showreel-play-button { transform:translate(-50%,-50%) scale(1.08); box-shadow:0 0 0 12px rgba(255,138,36,.09); }
+}
+@media (prefers-reduced-motion:reduce) { .vg-scroll-progress { display:none; } }
