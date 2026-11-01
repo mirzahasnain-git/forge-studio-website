@@ -50,7 +50,7 @@ function VideoFrame({item,onClose}) {
    onClick={e=>e.stopPropagation()}
   >
    <button onClick={onClose} aria-label="Close video" className="portfolio-modal-close absolute -top-11 right-0 rounded-full border border-white/20 bg-black/80 p-2 text-white hover:text-orange-300"><X size={20}/></button>
-   <div className={`relative overflow-hidden rounded-2xl border border-white/10 bg-black shadow-2xl ${portrait?"w-[min(420px,calc(78dvh*9/16))] aspect-[9/16]":"w-full max-w-5xl aspect-video max-h-[78dvh]"}`}>
+   <div style={portrait?{width:"min(420px, 44dvh)"}:undefined} className={`relative overflow-hidden rounded-2xl border border-white/10 bg-black shadow-2xl ${portrait?"aspect-[9/16]":"w-full max-w-5xl aspect-video max-h-[78dvh]"}`}>
     {item.videoSrc
      ? <video className="absolute inset-0 block h-full w-full bg-black object-contain" src={item.videoSrc} title={item.title} poster={item.cover} controls autoPlay playsInline preload="auto" controlsList="nodownload" onError={e=>{e.currentTarget.parentElement.dataset.videoError="true";}}/>
      : <iframe className="absolute inset-0 block h-full w-full" src={`https://www.youtube-nocookie.com/embed/${item.videoId}?autoplay=1&rel=0&playsinline=1`} title={item.title} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen/>
