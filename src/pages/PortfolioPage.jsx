@@ -9,11 +9,54 @@ const categories=["All","Web Development","Web Applications","Podcast Editing","
 
 function VideoFrame({item,onClose}) {
  const portrait=item.aspect==="portrait";
- return <motion.div initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}} transition={{duration:.2}} className="fixed inset-0 z-[80] flex items-center justify-center bg-black/90 p-4 backdrop-blur-md" role="dialog" aria-modal="true" aria-label={item.title} onClick={onClose}>
-  <motion.div initial={{opacity:0,scale:.94,y:18}} animate={{opacity:1,scale:1,y:0}} exit={{opacity:0,scale:.97,y:8}} transition={{type:"spring",damping:24,stiffness:260}} className={`relative w-full ${portrait?"max-w-sm":"max-w-5xl"}`} onClick={e=>e.stopPropagation()}>
-   <button onClick={onClose} aria-label="Close video" className="portfolio-modal-close absolute -top-11 right-0 rounded-full border border-white/20 bg-black/70 p-2 text-white hover:text-orange-300"><X size={20}/></button>
-   <div className={`relative overflow-hidden rounded-2xl border border-white/10 bg-black shadow-2xl ${portrait?"aspect-[9/16]":"aspect-video"}`}>{item.videoSrc ? <video className="absolute inset-0 h-full w-full object-contain" src={item.videoSrc} title={item.title} controls autoPlay playsInline /> : <iframe className="absolute inset-0 h-full w-full" src={`https://www.youtube-nocookie.com/embed/${item.videoId}?autoplay=1&rel=0`} title={item.title} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen/>}</div>
-   <p className="mt-3 text-sm text-neutral-300">{item.title}</p>
+
+ React.useEffect(()=>{
+  const body=document.body;
+  const previousOverflow=body.style.overflow;
+  const previousPaddingRight=body.style.paddingRight;
+  const scrollbarWidth=window.innerWidth-document.documentElement.clientWidth;
+  body.style.overflow="hidden";
+  if(scrollbarWidth>0) body.style.paddingRight=`${scrollbarWidth}px`;
+
+  const handleKeyDown=(event)=>{
+   if(event.key==="Escape") onClose();
+  };
+  window.addEventListener("keydown",handleKeyDown);
+
+  return ()=>{
+   body.style.overflow=previousOverflow;
+   body.style.paddingRight=previousPaddingRight;
+   window.removeEventListener("keydown",handleKeyDown);
+  };
+ },[onClose]);
+
+ return <motion.div
+  initial={{opacity:0}}
+  animate={{opacity:1}}
+  exit={{opacity:0}}
+  transition={{duration:.2}}
+  className="fixed inset-0 z-[100] flex items-center justify-center overflow-hidden bg-black/95 p-3 sm:p-5 backdrop-blur-md"
+  role="dialog"
+  aria-modal="true"
+  aria-label={item.title}
+  onClick={onClose}
+ >
+  <motion.div
+   initial={{opacity:0,scale:.97,y:10}}
+   animate={{opacity:1,scale:1,y:0}}
+   exit={{opacity:0,scale:.98,y:6}}
+   transition={{duration:.24,ease:[.22,1,.36,1]}}
+   className={`relative flex max-h-[92dvh] w-full flex-col items-center ${portrait?"max-w-[min(420px,92vw)]":"max-w-5xl"}`}
+   onClick={e=>e.stopPropagation()}
+  >
+   <button onClick={onClose} aria-label="Close video" className="portfolio-modal-close absolute -top-11 right-0 rounded-full border border-white/20 bg-black/80 p-2 text-white hover:text-orange-300"><X size={20}/></button>
+   <div className={`relative w-full overflow-hidden rounded-2xl border border-white/10 bg-black shadow-2xl ${portrait?"aspect-[9/16] max-h-[78dvh]":"aspect-video max-h-[78dvh]"}`}>
+    {item.videoSrc
+     ? <video className="absolute inset-0 h-full w-full object-contain" src={item.videoSrc} title={item.title} controls autoPlay playsInline preload="metadata"/>
+     : <iframe className="absolute inset-0 h-full w-full" src={`https://www.youtube-nocookie.com/embed/${item.videoId}?autoplay=1&rel=0`} title={item.title} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen/>
+    }
+   </div>
+   <p className="mt-2 text-center text-sm text-neutral-300">{item.title}</p>
   </motion.div>
  </motion.div>;
 }
