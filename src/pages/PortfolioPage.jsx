@@ -99,7 +99,8 @@ const PortfolioPage=()=>{
         transition={{ duration: reduceMotion ? 0 : .72, delay: reduceMotion ? 0 : Math.min(index * .055, .32), ease: [.22, 1, .36, 1], layout: { duration: .48, ease: [.22, 1, .36, 1] } }}
         whileHover={reduceMotion ? undefined : { y: -8, transition: { duration: .28, ease: [.22, 1, .36, 1] } }}
         className={`portfolio-card portfolio-card-uniform card-dark group ${isVideo ? "portfolio-card-video" : "portfolio-card-web"}`}>
-        <div className="portfolio-cover-wrap">\n         <span className="portfolio-motion-rail" aria-hidden="true"/>
+        <div className="portfolio-cover-wrap">
+         <span className="portfolio-motion-rail" aria-hidden="true"/>
          {isVideo?<button type="button" onClick={()=>setActiveVideo(p)} aria-label={`Play ${p.title}`} className="portfolio-cover portfolio-cover-button">
           <img src={p.cover} alt={p.title} loading="lazy" decoding="async" onError={e=>{e.currentTarget.style.opacity="0";}}/>
           <span className="portfolio-image-shade"/><span className="portfolio-cover-grid"/><span className="portfolio-cover-sheen" aria-hidden="true"/>
