@@ -1,6 +1,6 @@
 import { lazy, Suspense, useEffect } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
-import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
+import { AnimatePresence, motion, useLocation as useMotionLocation, useReducedMotion, useScroll, useSpring } from "framer-motion";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import SEO from "./components/SEO";
@@ -23,15 +23,21 @@ function PageLoader() {
   );
 }
 
+function ScrollProgress() {
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, { stiffness: 120, damping: 28, mass: 0.18 });
+  return <motion.div aria-hidden="true" className="vg-scroll-progress" style={{ scaleX }} />;
+}
+
 function RouteTransition({ children }) {
   const reduceMotion = useReducedMotion();
   return (
     <motion.div
       className="route-transition"
-      initial={reduceMotion ? false : { opacity: 0, y: 12, filter: "blur(3px)" }}
+      initial={reduceMotion ? false : { opacity: 0, y: 14, filter: "blur(4px)" }}
       animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
       exit={reduceMotion ? undefined : { opacity: 0, y: -8, filter: "blur(2px)" }}
-      transition={{ duration: reduceMotion ? 0 : 0.32, ease: [0.22, 1, 0.36, 1] }}
+      transition={{ duration: reduceMotion ? 0 : 0.38, ease: [0.22, 1, 0.36, 1] }}
     >
       {children}
     </motion.div>
@@ -48,6 +54,7 @@ export default function App() {
   return (
     <ErrorBoundary>
       <SEO />
+      <ScrollProgress />
       <Navbar />
       <AnimatePresence mode="wait" initial={false}>
         <Suspense fallback={<PageLoader />}>
