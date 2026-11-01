@@ -1,6 +1,6 @@
 import { lazy, Suspense, useEffect } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import SEO from "./components/SEO";
@@ -23,6 +23,21 @@ function PageLoader() {
   );
 }
 
+function RouteTransition({ children }) {
+  const reduceMotion = useReducedMotion();
+  return (
+    <motion.div
+      className="route-transition"
+      initial={reduceMotion ? false : { opacity: 0, y: 12, filter: "blur(3px)" }}
+      animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+      exit={reduceMotion ? undefined : { opacity: 0, y: -8, filter: "blur(2px)" }}
+      transition={{ duration: reduceMotion ? 0 : 0.32, ease: [0.22, 1, 0.36, 1] }}
+    >
+      {children}
+    </motion.div>
+  );
+}
+
 export default function App() {
   const location = useLocation();
 
@@ -37,12 +52,12 @@ export default function App() {
       <AnimatePresence mode="wait" initial={false}>
         <Suspense fallback={<PageLoader />}>
           <Routes location={location} key={location.pathname}>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/services" element={<ServicesPage />} />
-            <Route path="/portfolio" element={<PortfolioPage />} />
-            <Route path="/about" element={<AboutPage />} />
-            <Route path="/contact" element={<ContactPage />} />
-            <Route path="*" element={<HomePage />} />
+            <Route path="/" element={<RouteTransition><HomePage /></RouteTransition>} />
+            <Route path="/services" element={<RouteTransition><ServicesPage /></RouteTransition>} />
+            <Route path="/portfolio" element={<RouteTransition><PortfolioPage /></RouteTransition>} />
+            <Route path="/about" element={<RouteTransition><AboutPage /></RouteTransition>} />
+            <Route path="/contact" element={<RouteTransition><ContactPage /></RouteTransition>} />
+            <Route path="*" element={<RouteTransition><HomePage /></RouteTransition>} />
           </Routes>
         </Suspense>
       </AnimatePresence>
