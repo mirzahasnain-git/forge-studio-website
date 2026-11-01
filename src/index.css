@@ -393,3 +393,63 @@ button, a { touch-action: manipulation; }
 /* Native video stays fully inside the frame; black letterboxing is intentional for portrait clips. */
 [role="dialog"] video { display:block; width:100%; height:100%; object-fit:contain; background:#000; }
 @media(prefers-reduced-motion:reduce){[role="dialog"] *{animation:none!important;transition:none!important}}
+
+
+/* Portfolio reset: stable, simple cards and reliable image framing */
+.portfolio-grid { perspective:none!important; }
+.portfolio-card-uniform,
+.portfolio-card-uniform *,
+.portfolio-cover,
+.portfolio-cover img,
+.portfolio-motion-rail,
+.portfolio-cover-sheen,
+.portfolio-play,
+.portfolio-corner-arrow,
+.portfolio-cover-caption,
+.portfolio-card-body {
+  animation:none!important;
+  transition:none!important;
+}
+.portfolio-card-uniform,
+.portfolio-card-uniform:hover {
+  transform:none!important;
+  filter:none!important;
+  opacity:1!important;
+}
+.portfolio-card-uniform:hover .portfolio-cover img,
+.portfolio-card-uniform .portfolio-cover img {
+  transform:none!important;
+  filter:none!important;
+}
+.portfolio-motion-rail,
+.portfolio-cover-sheen { display:none!important; }
+.portfolio-cover,
+.portfolio-cover-button,
+.portfolio-cover-static {
+  position:relative!important;
+  display:block!important;
+  width:100%!important;
+  aspect-ratio:16/10!important;
+  height:auto!important;
+  overflow:hidden!important;
+  background:#111!important;
+}
+.portfolio-cover img,
+.portfolio-cover-image {
+  position:absolute!important;
+  inset:0!important;
+  display:block!important;
+  width:100%!important;
+  height:100%!important;
+  max-width:none!important;
+  object-fit:cover!important;
+  object-position:center!important;
+}
+.portfolio-card-uniform:hover .portfolio-play,
+.portfolio-card-uniform:hover .portfolio-corner-arrow {
+  transform:none!important;
+}
+@media(prefers-reduced-motion:reduce) {
+  .portfolio-card-uniform,
+  .portfolio-card-uniform * { animation:none!important; transition:none!important; }
+}
