@@ -318,3 +318,30 @@ code { font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', mon
     height: 400px;
   }
 }
+
+
+/* Studio polish: consistent micro-interactions, focus states and scroll behavior */
+:root { --vg-ease: cubic-bezier(.22,1,.36,1); --vg-motion-fast: 220ms; --vg-motion: 360ms; }
+html { scroll-padding-top: 88px; }
+body { text-rendering: optimizeLegibility; }
+::selection { background: rgba(255,138,36,.32); color: #fff8f0; }
+a, button, [role="button"] { -webkit-tap-highlight-color: transparent; }
+a:focus-visible, button:focus-visible, [role="button"]:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
+  outline: 2px solid #ffad61; outline-offset: 4px;
+}
+.route-transition { min-height: 1px; transform-origin: 50% 0; }
+.btn-primary-glow, .btn-outline-soft, .card-dark, .portfolio-card-uniform, .service-feature-card {
+  transition-timing-function: var(--vg-ease);
+}
+img { height: auto; }
+img:not([data-no-hover]) { transition: transform 700ms var(--vg-ease), filter 500ms var(--vg-ease); }
+.card-dark:hover img, .portfolio-card-uniform:hover .portfolio-cover img { transform: scale(1.035); }
+button, a { touch-action: manipulation; }
+@media (hover: hover) and (pointer: fine) {
+  .btn-primary-glow:hover { transform: translateY(-2px); }
+  .btn-outline-soft:hover { transform: translateY(-2px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .route-transition { animation: none !important; }
+  img, a, button, .card-dark, .portfolio-card-uniform, .service-feature-card { transition-duration: .01ms !important; }
+}
