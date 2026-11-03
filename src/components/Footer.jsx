@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Flame, Mail, Instagram, Facebook, Linkedin, MessageCircle } from "lucide-react";
+import { Mail, Instagram, Facebook, Linkedin, MessageCircle } from "lucide-react";
 
 const Footer = () => {
   const contactEmail = import.meta.env.VITE_CONTACT_EMAIL || "vgraph.co@gmail.com";
@@ -12,7 +12,7 @@ const Footer = () => {
           <div className="md:col-span-2">
             <Link to="/" className="flex items-center gap-2.5">
               <div className="w-9 h-9 rounded-xl border border-orange-400/50 flex items-center justify-center">
-                <Flame size={17} className="text-lime" />
+                <img src="/favicon.svg" alt="V-Graph logo" className="h-6 w-6 object-contain" />
               </div>
               <span className="font-display text-xl font-semibold text-lime">V-Graph <span className="text-white">Studio</span></span>
             </Link>
